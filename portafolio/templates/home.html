@@ -10,10 +10,10 @@
     <img src="{% static 'portfolio/imagen1.png' %}" />
   </div>
 
-  <div class="col-md-8 my-auto p-4">
+  <div class="col-md-8 my-auto p-4" data-aos="fade-right" style= "background: #1f1f1f;">
     <h1>I am <strong>Julian </strong></h1>
     <h3>I'm a Python Developer</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis tempora perspiciatis molestias iusto ducimus
+    <p class="text-grey">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis tempora perspiciatis molestias iusto ducimus
       soluta mollitia ratione, fuga praesentium, reiciendis minima! Facere, veniam! Omnis, quod molestias quo fugit enim
       vero vitae, cumque tenetur at, impedit provident dicta laudantium quia facilis consequuntur blanditiis iste
       laborum voluptatibus libero doloribus? Pariatur voluptatem obcaecati deserunt aperiam exercitationem nam voluptas
@@ -21,7 +21,14 @@
       blanditiis? Eius ipsum quidem enim architecto fugiat porro inventore libero praesentium aperiam nulla
       exercitationem nemo soluta, culpa impedit est et doloribus ut necessitatibus odit, dicta voluptate! Vero ab nulla
       placeat.</p>
-    <a class="btn btn-primary btn-lg rounded-0 my-3" href="{% static 'portfolio/cv.pdf' %}">Download my CV</a>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/julian657/" target="_blank">
+          <img width="30" height="30" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblog.carltonstaffing.com%2Fwp-content%2Fuploads%2F2020%2F09%2Flinkedin-icon-logo-png-transparent-2048x2048.png&f=1&nofb=1&ipt=e850b6d074650f5efd0e06bedca8fd2b9f82f58e577949a53aef4d0bb15794c8&ipo=images" alt="LinkedIn" class="icon-linkedin">
+        </a>
+        <a href="https://github.com/Archi657" target="_blank">
+          <img width="30" height="30" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-download.com%2Fwp-content%2Fuploads%2F2016%2F09%2FGitHub_logo.png&f=1&nofb=1&ipt=e7cde5148a0123582102c1dc346e4a9b08d445634d8542820fed3b59ff13a104&ipo=images" alt="GitHub" class="icon-github">
+        </a>
+    </div>
   </div>
 </header>
 
@@ -29,10 +36,10 @@
 <div class="row my-4 text-center">
 
   <h3>My Projects</h3>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, aperiam?</p>
+  <p class="text-grey">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, aperiam?</p>
 
   {% for project in projects %}
-  <div class="col-md-4 p-4">
+  <div class="col-md-4 p-4" data-aos="fade-up">
     <div class="card bg-black card-project">
       <img src="{{project.image.url }}" class="card-img-top" />
 
@@ -42,13 +49,34 @@
         <p>{{ project.description }}</p>
 
         {% if project.url %}
-        <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="__blank" rel="noreferrer">Visit the
-          Project</a>
+        <a href="{{project.url}}" target="__blank" rel="noreferrer">
+          <button class="button">Visit the Project</button>
+        </a>
         {% endif %}
       </div>
     </div>
   </div>
   {% endfor %}
+  <br/>
+  <br/>
+  <h3>Blogs</h3>
+  <p class="text-grey">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, aperiam?</p>
+  {% for post in posts %}
+  <div class="col-md-4 p-4" data-aos="fade-up">
+    <div class="card bg-black card-project">
+      <img src="{{project.image.url }}" class="card-img-top" />
+
+      <div class="card-body">
+
+        <h2>{{ post.0 }}</h2>
+        <p>{{ post.2 }}</p>
+
+        <p>Fecha : {{ post.1 }} </p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+ 
 </div>
 
 

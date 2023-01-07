@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-hz9pa*)a3uf)7txxe)@#%+o5eyu2k6ddker)7+5_eku%_2((1-'
@@ -95,11 +95,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static'), ]
 
 MEDIA_ROOT = BASE_DIR / 'media' #Create media folder
 
 MEDIA_URL = '/media/' # mediaurl to show public images : urls.py config
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
