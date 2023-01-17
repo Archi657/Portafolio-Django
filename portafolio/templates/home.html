@@ -62,19 +62,21 @@
   <h3>Blogs</h3>
   <p class="text-grey">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, aperiam?</p>
   {% for post in posts %}
-  <div class="col-md-4 p-4" data-aos="fade-up">
+  
+  
+     <div class="col-md-4 p-4" data-aos="fade-up" >
     <div class="card bg-black card-project">
-      <img src="{{project.image.url }}" class="card-img-top" />
+      <img src="{{ post.img }}" class="card-img-top" />
 
       <div class="card-body">
+        <a href= {{ post.url }} <h2>{{ post.title }}</h2>> </a>
+        
+        <p>{{ post.desc }}</p>
 
-        <h2>{{ post.0 }}</h2>
-        <p>{{ post.2 }}</p>
-
-        <p>Fecha : {{ post.1 }} </p>
       </div>
     </div>
   </div>
+
   {% endfor %}
  
 </div>
